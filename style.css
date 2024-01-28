@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#wrapper {
+  height: 100vh;
+
+  /* prevents horizontal scrolling when image is big */
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* position: relative; */
+
+  /* To add the 3D effect */
+  perspective: 10px;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  /* To add the parallax effect */
+  transform-style: preserve-3d;
+
+  /* so that image doesnt look stretched */
+  object-fit: cover;
+  z-index: -1;
+}
+
+.background,
+.foreground {
+  /* to overlap the images, we use absolute position */
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  /* so that adventure font comes at the front */
+  z-index: -1;
+}
+
+.foreground {
+  transform: translateZ(-20px) scale(3);
+  top: 10rem;
+}
+
+.background {
+  transform: translateZ(-40px) scale(5);
+}
+
+h1 {
+  position: absolute;
+  top: 10%;
+  font-size: 10rem;
+  text-shadow: 0.8rem 0.8rem 3rem black;
+  color: white;
+}
+
+section {
+  background-color: rgb(45, 45, 45);
+  color: white;
+  padding: 5rem 0;
+}
+
+.sectionHead {
+  font-size: 5rem;
+  padding: 0 10rem;
+  text-shadow: 0.3rem 0.3rem 2rem rgb(186, 182, 182);
+}
+
+.text {
+  font-size: 1.5rem;
+  padding: 0 10rem;
+  margin: 5rem 0;
+}
+
+.bg {
+  position: relative;
+  width: 100%;
+  height: 500px;
+
+  /* to fix the image in the center positon */
+  background-size: cover;
+  background-position: center;
+
+  /* image remains fixed when the text moves */
+  background-attachment: fixed;
+}
+
+.desc {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  background-color: none;
+  padding: 0.5rem 2.5rem;
+  color: white;
+  text-shadow: 0.8rem 0.8rem 0.3rem black;
+  font-size: 7.5rem;
+  font-weight: 600;
+}
+
+.bg1 {
+  background-image: url("sport-1.jpg");
+}
+
+.bg2 {
+  background-image: url("sport-2.jpg");
+}
+
+.bg3 {
+  background-image: url("sport-3.jpg");
+}
